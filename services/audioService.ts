@@ -15,8 +15,9 @@ export class AudioService {
       if (this.isPlaying) return;
   
       try {
-        // In standard React/Vite setups, files in 'public/' are served at the root path.
-        this.audio = new Audio('/music.mp3');
+        // Use relative path './music.mp3' instead of absolute '/music.mp3'.
+        // This ensures compatibility with GitHub Pages or other subdirectory hosting.
+        this.audio = new Audio('./music.mp3');
         this.audio.loop = true;
         this.audio.volume = 0.5; // Set a reasonable background volume
   
