@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phainon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background-color: #000;
+        margin: 0;
+        overflow: hidden;
+      }
+      
+      /* Cursor Blinking */
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+      .cursor-blink {
+        animation: blink 1s step-end infinite;
+      }
+
+      /* Moving Scanlines */
+      @keyframes scanline-scroll {
+        0% { background-position: 0% 0%; }
+        100% { background-position: 0% 100%; }
+      }
+      .animate-scanline {
+        animation: scanline-scroll 10s linear infinite;
+        background-size: 100% 4px; /* Size of the scanline pattern */
+      }
+
+      /* CRT Refresh Bar (Rolling horizontal band) */
+      @keyframes scan-bar {
+        0% { transform: translateY(-100%); }
+        100% { transform: translateY(100vh); }
+      }
+      .animate-scan-bar {
+        animation: scan-bar 8s linear infinite;
+      }
+
+      /* Subtle Screen Flicker */
+      @keyframes flicker {
+        0% { opacity: 0.97; }
+        5% { opacity: 0.95; }
+        10% { opacity: 0.97; }
+        15% { opacity: 0.99; }
+        20% { opacity: 0.95; }
+        25% { opacity: 0.98; }
+        30% { opacity: 0.94; }
+        35% { opacity: 0.98; }
+        40% { opacity: 0.96; }
+        45% { opacity: 0.99; }
+        50% { opacity: 0.98; }
+        55% { opacity: 0.96; }
+        60% { opacity: 0.99; }
+        65% { opacity: 0.96; }
+        70% { opacity: 1.0; }
+        75% { opacity: 0.98; }
+        80% { opacity: 0.96; }
+        85% { opacity: 0.99; }
+        90% { opacity: 0.97; }
+        95% { opacity: 0.98; }
+        100% { opacity: 0.97; }
+      }
+      .animate-flicker {
+        animation: flicker 0.15s infinite;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
